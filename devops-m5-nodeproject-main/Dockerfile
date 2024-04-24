@@ -1,4 +1,4 @@
-FROM node
+FROM node, express
 
 WORKDIR /usr/src/app
 
