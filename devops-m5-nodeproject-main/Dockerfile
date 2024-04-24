@@ -1,13 +1,7 @@
-FROM node, express
+FROM node:latest
 
-WORKDIR /usr/src/app
+RUN apt update
 
-COPY package*.json ./
+RUN apt install nodejs
 
-RUN npm install
-
-COPY . . 
-
-EXPOSE 5000
-
-CMD ["node", "index.js"]
+CMD ["npm", "node"]
