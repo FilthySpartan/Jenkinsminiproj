@@ -25,10 +25,10 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to DockerHub
-                    withCredentials([usernamePassword(credentialsId: 'your-dockerhub-credentials-id', usernameVariable: 'filthyspartan', passwordVariable: 'GitBastard1!')]) {
+                  
                         sh "docker login -u $filthyspartan -p $GitBastard1!"
                         sh 'docker push filthyspartan/miniproject'
-                    }
+                    
                 }
             }
         }
