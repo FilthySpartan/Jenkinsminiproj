@@ -7,6 +7,7 @@ pipeline {
                 script {
                     // Install Node.js dependencies
                     sh 'npm install'
+                    sh 'npm install express'
                 }
             }
         }
