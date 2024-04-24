@@ -13,6 +13,26 @@ pipeline {
         }
         
       
+  stage('Dockerize') {
+            steps {
+                script {
+                    // Build Docker image
+                    
+                    sh 'docker build -t filthyspartan/miniproject .'
+                }
+            }
+        }
+        
+        stage('Push to DockerHub') {
+            steps {
+                script {
+                    // Push Docker image to DockerHub
+                  
+                        sh "docker login -u $filthyspartan -p $GitBastard1!"
+                        sh 'docker push filthyspartan/miniproject'
+                    
+                }
+            }
         }
 
 }
