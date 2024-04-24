@@ -1,5 +1,5 @@
 pipeline {
-    agent docker {dockerfile True}
+    agent any
     
     stages {
         stage('Build') {
@@ -29,7 +29,7 @@ pipeline {
                     // Push Docker image to DockerHub
                   
                         sh "docker login -u $filthyspartan -p $GitBastard1!"
-                        sh 'docker push filthyspartan/miniproject'
+                        sh 'docker push filthyspartan/miniproject .'
                     
                 }
             }
